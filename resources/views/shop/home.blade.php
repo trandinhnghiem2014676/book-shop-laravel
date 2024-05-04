@@ -9,20 +9,20 @@
                 <div class="banner__slider owl-carousel">
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
+                            <span>Wolfies</span>
+                            <h1>Đầy đủ các thể loại sách, truyện</h1>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
+                            <span>Wolfies</span>
+                            <h1>Thân thiện với người dùng</h1>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
+                            <span>Wolfies</span>
+                            <h1>Đọc không bao giờ là thừa thải</h1>
                         </div>
                     </div>
                 </div>

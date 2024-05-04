@@ -27,7 +27,7 @@
                         <ul>
                             <li>
                                 <h6><i class="fa fa-map-marker"></i> Address</h6>
-                                <p>160 Pennsylvania Ave NW, Washington, Castle, PA 16101-5161</p>
+                                <p>3/2 street, Ninh Kieu, Can Tho</p>
                             </li>
                             <li>
                                 <h6><i class="fa fa-phone"></i> Phone</h6>
@@ -35,7 +35,7 @@
                             </li>
                             <li>
                                 <h6><i class="fa fa-headphones"></i> Support</h6>
-                                <p>Support.photography@gmail.com</p>
+                                <p>123@gmail.com</p>
                             </li>
                         </ul>
                     </div>

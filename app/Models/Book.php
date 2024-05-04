@@ -19,6 +19,7 @@ class Book extends Model
         'id_category',
         'id_publisher',
         'id_author',
+        'id_chapter',
     ];
 
     public function author()
@@ -34,6 +35,10 @@ class Book extends Model
     public function publisher()
     {
         return $this->hasOne(Publisher::class,'id','id_publisher');
+    }
+    public function chapter()
+    {
+        return $this->hasMany(Chapter::class,'id','id_chapter');
     }
 
     public function wishlists()

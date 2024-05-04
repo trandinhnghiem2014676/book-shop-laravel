@@ -81,6 +81,21 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
+                <a href="#chapter" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                    <i class="fe fe-book fe-16"></i>
+                    <span class="ml-3 item-text">Chapter</span>
+                </a>
+                <ul class="collapse list-unstyled pl-4 w-100" id="chapter">
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="{{URL::TO('/admin/chapter/create')}}"><span class="ml-1 item-text">Add</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="{{URL::TO('/admin/chapter/list')}}"><span
+                                class="ml-1 item-text">List</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
                 <a href="#users" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-users fe-16"></i>
                     <span class="ml-3 item-text">Accounts</span>

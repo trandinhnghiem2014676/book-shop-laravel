@@ -24,6 +24,12 @@
             <div class="col-lg-6">
                 <div class="product__details__pic">
                 <img class="product__big__img" src="{{asset('/'.$book->image) }}" alt="">
+                <h4>Mục lục</h4>
+                <ul class="mucluctruyen">
+                    @foreach($chapter as $key => $chap)
+                    <li><a href="{{url('xem-chapter/'.$chap->id)}}">{{$chap->name}}</a></li>
+                    @endforeach
+
                 </div>
             </div>
             <div class="col-lg-6">
@@ -46,7 +52,10 @@
                             {{ csrf_field() }}
                             <input type="text" name="id" value="{{$book->id}}">
                         </form>
-
+                        
+                        <a href="{{url('xem-chapter/'.$chapter_dau->id)}}" class="cart-btn">
+                            <span class="#"></span> Đọc Online
+                        </a>
                         @if(!Auth::check())
                             <a href="{{URL::to('login')}}" class="cart-btn" >
                                 <span class="icon_heart_alt"></span> Add to Wishlist

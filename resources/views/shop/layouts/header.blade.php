@@ -11,7 +11,7 @@
             </a></li>
     </ul>
     <div class="offcanvas__logo">
-        <a href="{{URL::to('/home')}}"><img src="{{asset('/templates/shop/img/download.png')}}" alt=""></a>
+        <a href="{{URL::to('/home')}}"><h4> WOLFIES</h4></a>
     </div>
     <div id="mobile-menu-wrap"></div>
 </div>

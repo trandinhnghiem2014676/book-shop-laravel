@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -28,7 +29,9 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get('/', function(){ return redirect()->to('/home'); })->name('home');
 Route::get('/home',[HomeController::class, 'index']);
 
+
 Route::get('/contact',[HomeController::class, 'contact']);
+Route::get('/xem-chapter/{id}',[HomeController::class, 'xemchapter']);
 
 Route::get('/product',function(){ return redirect()->to('/product/list'); });
 Route::get('/product/list',[HomeController::class, 'productList']);
@@ -78,6 +81,17 @@ Route::middleware(['auth.admin'])->group(function () {
             Route::get('/edit/{id}',[CategoryController::class, 'edit']);
             Route::put('/update/{id}',[CategoryController::class, 'update']);
             Route::delete('/detroy/{id}',[CategoryController::class, 'detroy']);
+        });
+
+        #Chapter
+        Route::prefix('/chapter')->group(function(){
+            Route::get('/',function(){ return redirect()->to('/admin/chapter/list'); });
+            Route::get('/create',[ChapterController::class, 'create']);
+            Route::get('/list',[ChapterController::class, 'index']);
+            Route::post('/store',[ChapterController::class, 'store']);
+            Route::get('/edit/{id}',[ChapterController::class, 'edit']);
+            Route::put('/update/{id}',[ChapterController::class, 'update']);
+            Route::delete('/detroy/{id}',[ChapterController::class, 'detroy']);
         });
 
         #Publisher

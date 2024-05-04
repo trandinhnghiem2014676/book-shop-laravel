@@ -90,7 +90,7 @@
                             <li>Subtotal <span>$ {{$total}}</span></li>
                             <li>Total <span>$ {{$total}}</span></li>
                         </ul>
-                        <a href="{{URL::TO('/checkout')" class="primary-btn">Proceed to checkout</a>
+                        <a href="{{URL::TO('/checkout')}}" class="primary-btn">Proceed to checkout</a>
                     </div>
                 </div>
             </div>

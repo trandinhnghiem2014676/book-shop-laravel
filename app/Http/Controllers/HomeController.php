@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Publisher;
 use App\Models\Wishlist;
 use App\Models\Order;
+use App\Models\chapter;
 use App\Models\OrderDetail;
 
 class HomeController extends Controller
@@ -30,7 +31,7 @@ class HomeController extends Controller
             'books'=> Book::orderBy('id', 'DESC')->paginate(9),
             'categorys' => Category::all(),
             'publishers' => Publisher::all(),
-            'authors' => Author::all()
+            'authors' => Author::all(),
         ]);
     }
 
@@ -70,6 +71,8 @@ class HomeController extends Controller
     public function productDetail($id)
     {
         $book = Book::where('id', $id)->firstOrFail();
+        $chapter = Chapter::with('books')->orderBy('id','DESC')->where('id_books',$book->id)->get();
+        $chapter_dau = Chapter::with('books')->orderBy('id','ASC')->where('id_books',$book->id)->first();
         return view('shop.products.detail',[
             'book'=> $book,
             'categorys' => Category::all(),
@@ -78,7 +81,7 @@ class HomeController extends Controller
             'books_category' => Book::where('id_category', $book->id_category)->where('id','<>',$id)->inRandomOrder()->limit(4)->get(),
             'books_publisher' => Book::where('id_publisher', $book->id_publisher)->where('id','<>',$id)->inRandomOrder()->limit(4)->get(),
             'books_author' => Book::where('id_author', $book->id_author)->where('id','<>',$id)->inRandomOrder()->limit(4)->get(),
-        ]);
+        ])->with(compact('chapter','chapter_dau'));
     }
 
     public function searchProduct(Request $request)
@@ -141,6 +144,12 @@ class HomeController extends Controller
         Wishlist::where('id',$id)->delete();
 
         return redirect()->back();
+    }
+
+    public function xemchapter($id){
+        $books = Chapter::where('id',$id)->first();
+        $chapter = Chapter::with('books')->where('id',$id)->where('id_books',$books->id)->first();
+        return view('shop.products.chapter')->with(compact('chapter','books'));
     }
 
     public function showMyOrders()
